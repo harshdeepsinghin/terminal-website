@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshdeep Singh's Terminal</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            font-size: 18px;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .console-box {
+            background-color: #2d2d2d;
+            border-bottom: 2px solid #00ff00;
+            padding: 10px;
+            white-space: pre-wrap;
+            max-height: 50px;
+            overflow-y: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .console-output {
+            color: #00ff00;
+        }
+
+        .initial-overlay {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            transition: transform 0.5s ease-in-out;
+            z-index: 1; /* Ensure the overlay is on top */
+        }
+
+        .initial-overlay .terminal {
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(30, 255, 0, 0.339);
+            color: white;
+            font-family: monospace;
+            font-size: 18px;
+            padding: 3vh 5vw;
+        }
+
+        .initial-overlay .inputBox {
+            display: flex;
+            background: none;
+            border: none;
+            border-radius: 3px;
+            width: 70vw;
+            margin: 0 auto;
+            position: relative;
+            bottom: 1%;
+            justify-content: space-between; /* Add this line to position the hint */
+            flex-wrap: wrap;
+        }
+
+        .initial-overlay #inputBash {
+            color: white;
+            padding: 12px;
+            padding-top: 0;
+        }
+
+        .initial-overlay #inputName {
+            background: none;
+            outline: none;
+            border: none;
+            color: white;
+            font-family: monospace;
+            font-size: 18px;
+            padding-bottom: 20px;
+            padding-left: 10px;
+            width: 100%;
+        }
+
+        .initial-overlay button {
+            display: none; /* Hide the submit button */
+        }
+
+        .frame {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh;
+            background-color: black;
+            transform: translateY(100%); /* Initially move the frame down */
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .frame .terminal {
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(30, 255, 0, 0.339);
+            color: white;
+            font-family: monospace;
+            font-size: 18px;
+            width: 70vw;
+            padding: 3vh 5vw;
+            position: relative;
+        }
+
+        .frame .inputBox {
+            display: flex;
+            background: none;
+            border: 2px solid #00ff00;
+            border-radius: 3px;
+            position: fixed;
+            bottom: 0;
+            width: 70vw; /* Set to the same width as the .terminal */
+            margin: 0; /* Added to remove margin */
+            padding: 10px; /* Added to remove padding */
+            bottom: 2%;
+            flex-wrap: wrap;
+        }
+
+        .frame #inputBash {
+            color: white;
+            padding: 12px;
+            padding-right: 0;
+        }
+
+        .frame #inputCommand {
+            background: none;
+            outline: none;
+            border: none;
+            color: white;
+            font-family: monospace;
+            font-size: 18px;
+            padding: 8px;
+            width: 100%; /* Added to fill the entire width of the .inputBox */
+        }
+
+        h1 {
+            color: #00ff00;
+            margin-bottom: 20px;
+            padding: 1%;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #00ff00;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li:before {
+            content: "./";
+            color: #00ff00;
+            margin-right: 5px;
+        }
+
+        .highlight {
+            color: #00ff00;
+        }
+
+        /* Media query for landscape orientation */
+        @media screen and (orientation: landscape) {
+            .terminal {
+                padding: 3vh 10vw; /* Adjusted left and right padding for landscape */
+            }
+            #inputCommand {
+                padding: 1%; /* Adjusted left and right padding for landscape */
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="initial-overlay" id="initialOverlay">
+        <div class="terminal">
+            <div class="inputBox">
+                <div id="inputBash">What should I call you?: </div>
+                <input autofocus="autofocus" style="color: #00ff00;" type="text" id="inputName" placeholder="Type your name..." oninput="handleinputCommand(event)" onkeydown="handleNameKeyPress(event)">
+                <div style="color: #00ff0067; position: absolute; bottom: -10px; left: 0; padding-left: 10px; width: 100%;">Press Enter to confirm.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="frame" id="mainFrame">
+        <div class="console-box" id="consoleBox"></div>
+        <div class="terminal" id="terminal">
+            <h1>Welcome to Harshdeep's Terminal</h1>
+            <p>Execute a command to explore a link below:</p>
+            <ul>
+                <li><a href="https://harshdeepsingh.in/" target="_blank">Links</a></li>
+                <li><a href="https://www.linkedin.com/in/harshdeepsinghin/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/harshdeepsinghin" target="_blank">Github</a></li>
+                <li><a href="mailto:contact@harshdeepsingh.in" target="_blank">Email</a></li>
+            </ul>
+        </div>
+
+        <div class="inputBox">
+            <div id="inputBash"></div>
+            <input autofocus="autofocus" type="text" id="inputCommand" placeholder="Type something..." oninput="handleinputCommand(event)" onkeypress="handleKeyPress(event)">
+        </div>
+    </div>
+
+    <script>
+        let isTriggered = false;
+        let userName = "";
+
+        function openMainFrame() {
+            document.getElementById('mainFrame').style.transform = 'translateY(0)';
+            document.getElementById('inputCommand').focus(); // Set focus on the input box in the main frame
+        }
+
+        function openInitialOverlay() {
+            document.getElementById('initialOverlay').style.transform = 'translateY(0)';
+            document.getElementById('inputName').focus(); // Set focus on the input box in the initial overlay
+        }
+
+        window.onload = openInitialOverlay;
+
+        function appendToConsole(output) {
+            const consoleBox = document.getElementById('consoleBox');
+            consoleBox.innerHTML = `<span class="console-output">${output}</span>`;
+        }
+
+        function submitName() {
+            userName = document.getElementById('inputName').value.trim();
+            userName = userName || "user";
+            document.getElementById('mainFrame').querySelector('#inputBash').innerText = userName + '@harshdeepsingh.in~$: ';
+            closeInitialOverlay();
+            openMainFrame();
+        }
+
+        function closeInitialOverlay() {
+            document.getElementById('initialOverlay').style.transform = 'translateY(-100%)';
+        }
+
+        function handleinputCommand(event) {
+            const input = event.target;
+            const inputValue = input.value.trim().toLowerCase();
+            isTriggered = inputValue.startsWith('./');
+            highlightLinks(inputValue.substring(2));
+        }
+
+        function highlightLinks(command) {
+            const links = document.querySelectorAll('.terminal a');
+            links.forEach(link => {
+                const linkText = link.textContent.toLowerCase();
+                const shouldHighlight = isTriggered && linkText.startsWith(command);
+                link.classList.toggle('highlight', shouldHighlight);
+            });
+        }
+
+        function handleNameKeyPress(event) {
+            if (event.key === 'Enter' || event.keyCode === 229 ) {
+                submitName();
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                const inputCommand = document.getElementById('inputCommand');
+                const highlightedLink = document.querySelector('.terminal a.highlight');
+
+                if (inputCommand && inputCommand.value.trim() !== "") {
+                    const command = inputCommand.value.trim().toLowerCase();
+
+                    if (isTriggered && highlightedLink) {
+                        const linkName = highlightedLink.textContent;
+                        const output = `Executed ./${linkName}`;
+                        console.log(output);
+                        appendToConsole(output);
+                    } else if (command.startsWith('echo ')) {
+                        const echoText = command.substring(5);
+                        console.log(echoText);
+                        appendToConsole(echoText);
+                    } else {
+                        switch (command) {
+                            case 'help':
+                                console.log('TODO: redirect to help page');
+                                appendToConsole('TODO: redirect to help page');
+                                break;
+                            case 'exit':
+                            case 'quit':
+                                console.log('Closing the tab...');
+                                window.close();
+                                break;
+                            case 'reboot':
+                            case 'restart':
+                                console.log('Refreshing the site...');
+                                location.reload();
+                                break;
+                            case 'clear':
+                                console.clear();
+                                appendToConsole("");
+                                break;
+                            case 'pwd':
+                                console.log('Current directory: ' + location);
+                                appendToConsole('Current directory: ' + location);
+                                break;
+                            case 'console':
+                                const consoleBox = document.getElementById('consoleBox');
+                                consoleBox.style.display = consoleBox.style.display === 'none' ? 'block' : 'none';
+                                console.log('Console switched on/off.');
+                                appendToConsole('Console switched on/off.');
+                                break;
+                            default:
+                                const output = `Command not recognized: ${command}. Type "help" for assistance.`;
+                                console.log(output);
+                                appendToConsole(output);
+                        }
+                    }
+                }
+
+                if (highlightedLink) {
+                    highlightedLink.click();
+                }
+
+                event.preventDefault();
+
+                inputCommand.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
