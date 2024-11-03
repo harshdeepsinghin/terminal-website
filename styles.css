@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.console-box {
+    background-color: #2d2d2d;
+    border-bottom: 2px solid #00ff00;
+    padding: 10px;
+    white-space: pre-wrap;
+    max-height: 50px;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.console-output {
+    color: #00ff00;
+}
+
+.initial-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    transition: transform 0.5s ease-in-out;
+    z-index: 1; /* Ensure the overlay is on top */
+}
+
+.initial-overlay .terminal {
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(30, 255, 0, 0.339);
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+    padding: 3vh 5vw;
+}
+
+.initial-overlay .inputBox {
+    display: flex;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    width: 70vw;
+    margin: 0 auto;
+    position: relative;
+    bottom: 1%;
+    justify-content: space-between; /* Add this line to position the hint */
+    flex-wrap: wrap;
+}
+
+.initial-overlay #inputBash {
+    color: white;
+    padding: 12px;
+    padding-top: 0;
+}
+
+.initial-overlay #inputName {
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.initial-overlay button {
+    display: none; /* Hide the submit button */
+}
+
+.frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    background-color: black;
+    transform: translateY(100%); /* Initially move the frame down */
+    transition: transform 0.5s ease-in-out;
+}
+
+.frame .terminal {
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(30, 255, 0, 0.339);
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+    width: 70vw;
+    padding: 3vh 5vw;
+    position: relative;
+}
+
+.frame .inputBox {
+    display: flex;
+    background: none;
+    border: 2px solid #00ff00;
+    border-radius: 3px;
+    position: fixed;
+    bottom: 0;
+    width: 70vw; /* Set to the same width as the .terminal */
+    margin: 0; /* Added to remove margin */
+    padding: 10px; /* Added to remove padding */
+    bottom: 2%;
+    flex-wrap: wrap;
+}
+
+.frame #inputBash {
+    color: white;
+    padding: 12px;
+    padding-right: 0;
+}
+
+.frame #inputCommand {
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+    padding: 8px;
+    width: 100%; /* Added to fill the entire width of the .inputBox */
+}
+
+h1 {
+    color: #00ff00;
+    margin-bottom: 20px;
+    padding: 1%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00ff00;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li:before {
+    content: "./";
+    color: #00ff00;
+    margin-right: 5px;
+}
+
+.highlight {
+    color: #00ff00;
+}
+
+/* Media query for landscape orientation */
+@media screen and (orientation: landscape) {
+    .terminal {
+        padding: 3vh 10vw; /* Adjusted left and right padding for landscape */
+    }
+    #inputCommand {
+        padding: 1%; /* Adjusted left and right padding for landscape */
+    }
+}
