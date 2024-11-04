@@ -1,7 +1,7 @@
 body {
     display:flex;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     background-color: black; /* Background color for contrast */
     color: #ffffff; /* Text color */
     font-family: monospace; /* Monospace font for terminal feel */
@@ -28,6 +28,7 @@ body {
     text-decoration: none;
       line-height: 2rem;
       padding: 0 1rem;
+    color:#00ff00;
     
   }
   
@@ -53,7 +54,7 @@ body {
     padding-left: 5%;
     border-left:solid;
     border-left-width: 1px;
-    border-left-color:white;
+    border-left-color:#00ff00;
     border-spacing:
 
 }
@@ -96,6 +97,10 @@ a[class="heading"] {
     color: #00ff00;
 }
 
+a[class="section-toc"] {
+    color: #00ff00;
+}
+
 a:visited {
     color: rgb(119, 190, 252); /* Set visited link color */
 }
@@ -104,6 +109,9 @@ a:visited[class="heading"] {
     color: #00ff00;
 }
 
+a:visited[class="section-toc"] {
+    color: #00ff00;
+}
 
 a:hover {
     color: #00ff00; /* Link hover color */
@@ -111,16 +119,6 @@ a:hover {
 
 a:active {
     color: #00ff00; /* Color when the link is clicked */
-}
-
-/* Heading link styling */
-.heading-link {
-    color: #ffcc00; /* Different color for heading links */
-    font-weight: bold; /* Bold text for emphasis */
-}
-
-.heading-link:hover {
-    color: #00ff00; /* Hover color for heading links */
 }
 
 .flex-container {
@@ -158,4 +156,76 @@ a:active {
     margin-left: auto; /* Push the date to the right */
     text-align: right; /* Ensure right alignment of the date */
     font-style: italic; /* Optional: italicize the date for styling */
+}
+
+/* Android Responsive Code*/
+@media only screen and (max-width: 940px) {
+
+    body {
+        display:grid;
+        padding:0;
+    }
+    .section-toc {
+        display:none;
+        position: sticky;
+        top: 0;                  /* Stick to the bottom of the viewport */
+        background-color: rgba(0, 0, 0, 0.8); /* No background color */
+        width: 90%;               /* Full viewport width */
+        border-bottom: 2px solid #00ff00; /* Green top border */
+        z-index: 1000;
+        overflow-x: auto;
+        white-space: nowrap;
+        align-content:left;
+    }
+    
+    .section-toc ul {
+        display:inline;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width:1pt;
+    }
+    
+    .section-toc li {
+        margin-right: 10px;
+        float:left;
+    }
+
+    .section-toc a:hover,
+    .section-toc a:focus {
+        color: rgb(255, 255, 255);
+        text-decoration: underline;
+        font-style:italic;
+        padding:none;
+        transition: all .2s ease-in-out;
+    }
+
+    .section-toc a:not(:hover),
+    .section-toc a:not(focus) {
+        padding:none;
+        transition: all .2s ease-in-out;
+        
+    }
+
+    .section-toc li:not(:last-child)::after {
+        content: "|";               /* Separator character */
+        color: #00ff00;             /* Green color for the separator */
+        margin-left: 10px;          /* Space between text and separator */
+        font-weight: normal;        /* Optional: match font weight */
+    }
+
+    .section-main {
+        margin-left: 0%;
+        padding-left: 5%;
+        padding-right: 2%;
+        font-size:14pt;
+        border:none;
+
+
+    }
+
+    ul {
+        margin-left: 0; /* Indentation for lists */
+        margin-bottom: 15px; /* Space below lists */
+    }
 }
