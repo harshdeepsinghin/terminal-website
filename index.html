@@ -1,163 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshdeep Singh's Terminal</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    
-
-    <div class="initial-overlay" id="initialOverlay">
-        <div class="terminal">
-            <div class="inputBox">
-                <div id="inputBash">What should I call you?: </div>
-                <input autofocus="autofocus" style="color: #00ff00;" type="text" id="inputName" placeholder="Type your name..." oninput="handleinputCommand(event)" onkeydown="handleNameKeyPress(event)">
-                <div style="color: #00ff0067; position: absolute; bottom: -10px; left: 0; padding-left: 10px; width: 100%;">Press Enter to confirm.</div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinuxWale - Home</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Press+Start+2P&family=VT323:wght@400&family=Fira+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html" class="logo-text">LinuxWale</a>
         </div>
-    </div>
+        <ul class="nav-menu">
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <div class="frame" id="mainFrame">
-        <div class="console-box" id="consoleBox"></div>
-        <div class="terminal" id="terminal">
-            <h1>Welcome to Harshdeep's Terminal</h1>
-            <p>Execute a command to explore a link below:</p>
-            <ul>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="https://harshdeepsingh.in/" target="_blank">Links</a></li>
-                <li><a href="https://www.linkedin.com/in/harshdeepsinghin/" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/harshdeepsinghin" target="_blank">Github</a></li>
-                <li><a href="mailto:contact@harshdeepsingh.in" target="_blank">Email</a></li>
-            </ul>
+    <!-- Hero Section with Animated Title -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 id="animated-title" class="hero-title">LinuxWale</h1>
+        <p class="hero-subtitle">Why windows, when we have doors?</p>
+      </div>
+    </section>
+
+    <!-- Main Content Sections - Discord Style Layout -->
+    <main class="main-sections">
+      <!-- Section 1: Title Left, Content Right -->
+      <section class="content-section left-title">
+        <div class="section-container">
+          <div class="section-title">
+            <h2>Naming</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              It's a portmanteau which contains two words "Linux" and "Wale".
+              Where, "Linux" is an open source operating system, whereas, "Wale
+              (वाले)" translates to "people" or "of" in English which is often
+              used as a suffix to indicate association with a particular group
+              or characteristic.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div class="inputBox">
-            <div id="inputBash"></div>
-            <input autofocus="autofocus" type="text" id="inputCommand" placeholder="Type something..." oninput="handleinputCommand(event)" onkeypress="handleKeyPress(event)">
+      <!-- Section 2: Content Left, Title Right -->
+      <section class="content-section right-title">
+        <div class="section-container">
+          <div class="section-content">
+            <p>
+              LinuxWale is a community passionately dedicated to promoting Open
+              Source Softwares like Linux. Whether you're a beginner seeking
+              education alongside peers or an experienced who is ready to share
+              his/her experience by helping others and contributing to the
+              community, LinuxWale is your go-to space for embracing the power
+              of FOSS and Linux.
+            </p>
+          </div>
+          <div class="section-title">
+            <h2>What is LinuxWale?</h2>
+          </div>
         </div>
-    </div>
+      </section>
 
+      <!-- Section 3: Title Left, Content Right -->
+      <section class="content-section left-title">
+        <div class="section-container">
+          <div class="section-title">
+            <h2>What is Linux?</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Linux operating system is a free and open-source Unix-like
+              operating system. The Linux kernel, on the other hand, is the core
+              part of the Linux operating system responsible for managing
+              hardware resources and providing essential services that serves as
+              the foundation for various operating systems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Content Left, Title Right -->
+      <section class="content-section right-title">
+        <div class="section-container">
+          <div class="section-content">
+            <p>
+              Linux offers unparalleled freedom, security, and customization.
+              It's free from corporate control, highly secure by design, and
+              gives you complete control over your computing experience. With
+              thousands of distributions to choose from, Linux adapts to your
+              needs rather than forcing you to adapt to it. Plus, it's the
+              backbone of the internet, powering servers, supercomputers, and
+              embedded systems worldwide.
+            </p>
+          </div>
+          <div class="section-title">
+            <h2>Why Linux?</h2>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Title Left, Content Right -->
+      <section class="content-section left-title">
+        <div class="section-container">
+          <div class="section-title">
+            <h2>Why LinuxWale?</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              We are a Linux Community that supports and encourages Linux, Open
+              Source Projects as well as Any Kind Tech that adds value to our
+              people. We try to help our people in any kind of problems related
+              to tech (especially Linux).
+            </p>
+            <p>
+              Welcome to LinuxWale – where the magic of Linux unfolds! Immerse
+              yourself in the captivating world of the most exquisite operating
+              system of all time – LINUX. As a passionate community, we not only
+              embrace the beauty of Linux but also champion Open Source Projects
+              and any transformative tech that elevates our community. At
+              LinuxWale, we're not just enthusiasts; we're a vibrant hub
+              dedicated to supporting and empowering individuals facing any tech
+              challenge, with a special focus on the mesmerizing realm of Linux.
+              Join us, and let's navigate the limitless possibilities of tech
+              together!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call-to-Action Section -->
+      <section class="cta-section">
+        <div class="cta-container">
+          <h2>Join the Revolution</h2>
+          <p>
+            Be a LinuxWala to explore the digital, raise awareness about digital
+            privacy and advocate for FOSS.
+          </p>
+          <button
+            class="cta-button"
+            onclick="window.location.href='contact.html'"
+          >
+            Join LinuxWale
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>LinuxWale</h3>
+          <p>We love penguins 🐧</p>
+          <p>Why windows, when we have doors?</p>
+        </div>
+        <div class="footer-section">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 LinuxWale. Embracing the power of FOSS.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
     <script>
-        let isTriggered = false;
-        let userName = "";
+      // Check if this is a first-time visitor
+      document.addEventListener("DOMContentLoaded", () => {
+        const hasCompletedWelcome = localStorage.getItem(
+          "linuxwale_welcome_completed"
+        );
 
-        function openMainFrame() {
-            document.getElementById('mainFrame').style.transform = 'translateY(0)';
-            document.getElementById('inputCommand').focus(); // Set focus on the input box in the main frame
+        if (!hasCompletedWelcome) {
+          // First-time visitor - redirect to welcome terminal
+          window.location.href = "welcome.html";
         }
-
-        function openInitialOverlay() {
-            document.getElementById('initialOverlay').style.transform = 'translateY(0)';
-            document.getElementById('inputName').focus(); // Set focus on the input box in the initial overlay
-        }
-
-        window.onload = openInitialOverlay;
-
-        function appendToConsole(output) {
-            const consoleBox = document.getElementById('consoleBox');
-            consoleBox.innerHTML = `<span class="console-output">${output}</span>`;
-        }
-
-        function submitName() {
-            userName = document.getElementById('inputName').value.trim();
-            userName = userName || "user";
-            document.getElementById('mainFrame').querySelector('#inputBash').innerText = userName + '@harshdeepsingh.in~$: ';
-            closeInitialOverlay();
-            openMainFrame();
-        }
-
-        function closeInitialOverlay() {
-            document.getElementById('initialOverlay').style.transform = 'translateY(-100%)';
-        }
-
-        function handleinputCommand(event) {
-            const input = event.target;
-            const inputValue = input.value.trim().toLowerCase();
-            isTriggered = inputValue.startsWith('./');
-            highlightLinks(inputValue.substring(2));
-        }
-
-        function highlightLinks(command) {
-            const links = document.querySelectorAll('.terminal a');
-            links.forEach(link => {
-                const linkText = link.textContent.toLowerCase();
-                const shouldHighlight = isTriggered && linkText.startsWith(command);
-                link.classList.toggle('highlight', shouldHighlight);
-            });
-        }
-
-        function handleNameKeyPress(event) {
-            if (event.key === 'Enter' || event.keyCode === 229 ) {
-                submitName();
-            }
-        }
-
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') {
-                const inputCommand = document.getElementById('inputCommand');
-                const highlightedLink = document.querySelector('.terminal a.highlight');
-
-                if (inputCommand && inputCommand.value.trim() !== "") {
-                    const command = inputCommand.value.trim().toLowerCase();
-
-                    if (isTriggered && highlightedLink) {
-                        const linkName = highlightedLink.textContent;
-                        const output = `Executed ./${linkName}`;
-                        console.log(output);
-                        appendToConsole(output);
-                    } else if (command.startsWith('echo ')) {
-                        const echoText = command.substring(5);
-                        console.log(echoText);
-                        appendToConsole(echoText);
-                    } else {
-                        switch (command) {
-                            case 'help':
-                                console.log('TODO: redirect to help page');
-                                appendToConsole('TODO: redirect to help page');
-                                break;
-                            case 'exit':
-                            case 'quit':
-                                console.log('Closing the tab...');
-                                window.close();
-                                break;
-                            case 'reboot':
-                            case 'restart':
-                                console.log('Refreshing the site...');
-                                location.reload();
-                                break;
-                            case 'clear':
-                                console.clear();
-                                appendToConsole("");
-                                break;
-                            case 'pwd':
-                                console.log('Current directory: ' + location);
-                                appendToConsole('Current directory: ' + location);
-                                break;
-                            case 'console':
-                                const consoleBox = document.getElementById('consoleBox');
-                                consoleBox.style.display = consoleBox.style.display === 'none' ? 'block' : 'none';
-                                console.log('Console switched on/off.');
-                                appendToConsole('Console switched on/off.');
-                                break;
-                            default:
-                                const output = `Command not recognized: ${command}. Type "help" for assistance.`;
-                                console.log(output);
-                                appendToConsole(output);
-                        }
-                    }
-                }
-
-                if (highlightedLink) {
-                    highlightedLink.click();
-                }
-
-                event.preventDefault();
-
-                inputCommand.value = "";
-            }
-        }
+      });
     </script>
-</body>
+  </body>
 </html>

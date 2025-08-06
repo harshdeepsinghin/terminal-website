@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinuxWale - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Press+Start+2P&family=VT323:wght@400&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-text">LinuxWale</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1 class="page-title">Get In Touch</h1>
+            <p class="page-subtitle">Connect with the LinuxWale community 📡</p>
+        </div>
+    </section>
+
+    <!-- Main Contact Content - Simple Structure -->
+    <main class="contact-main">
+        <div class="contact-simple-container">
+            <!-- Community Channels -->
+            <section class="contact-section">
+                <h2>Community Channels</h2>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <h3>Discord Server</h3>
+                        <p>Join our active Discord community for real-time discussions, support, and networking with fellow Linux enthusiasts.</p>
+                        <a href="#" class="contact-link">Join Discord</a>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <h3>Telegram Group</h3>
+                        <p>Connect with us on Telegram for quick updates, announcements, and community discussions.</p>
+                        <a href="#" class="contact-link">Join Telegram</a>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <h3>Reddit Community</h3>
+                        <p>Participate in discussions, share your projects, and get help from our Reddit community.</p>
+                        <a href="#" class="contact-link">Visit r/LinuxWale</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social Media -->
+            <section class="contact-section">
+                <h2>Social Media</h2>
+                <div class="social-methods">
+                    <div class="social-method">
+                        <h3>Twitter</h3>
+                        <p>Follow us for the latest Linux news and updates</p>
+                        <a href="#" class="contact-link">Follow on Twitter</a>
+                    </div>
+                    
+                    <div class="social-method">
+                        <h3>YouTube</h3>
+                        <p>Subscribe for tutorials and community content</p>
+                        <a href="#" class="contact-link">Subscribe on YouTube</a>
+                    </div>
+                    
+                    <div class="social-method">
+                        <h3>LinkedIn</h3>
+                        <p>Connect with us professionally</p>
+                        <a href="#" class="contact-link">Connect on LinkedIn</a>
+                    </div>
+                    
+                    <div class="social-method">
+                        <h3>GitHub</h3>
+                        <p>Contribute to our open-source projects</p>
+                        <a href="#" class="contact-link">Visit our GitHub</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- FAQ Section with Collapsible Items -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How can I contribute to LinuxWale?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can contribute by sharing knowledge in our forums, creating tutorials, helping other community members, or contributing to our open-source projects on GitHub. We welcome all forms of contribution!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Is LinuxWale free to join?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! LinuxWale is completely free to join. We believe in the open-source philosophy and want to make Linux education accessible to everyone. There are no membership fees or hidden costs.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Do you offer professional services?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer consulting services for businesses looking to migrate to Linux or implement FOSS solutions. Our services include migration planning, infrastructure design, training programs, and ongoing support. Contact us for more details.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What Linux distributions do you support?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We support all major Linux distributions including Ubuntu, Debian, Fedora, CentOS, Arch Linux, openSUSE, and many others. Our community has expertise across the entire Linux ecosystem.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I get started with Linux?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Start by choosing a beginner-friendly distribution like Ubuntu or Linux Mint. You can try them in a virtual machine first, then dual-boot with your current OS. Join our community for guidance and check out our educational resources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>LinuxWale</h3>
+                <p>We love penguins 🐧</p>
+                <p>Why windows, when we have doors?</p>
+            </div>
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LinuxWale. Embracing the power of FOSS.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // FAQ Toggle Function
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = button.querySelector('.faq-icon');
+            
+            // Toggle active class
+            faqItem.classList.toggle('active');
+            
+            // Change icon
+            if (faqItem.classList.contains('active')) {
+                icon.textContent = '−';
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            } else {
+                icon.textContent = '+';
+                answer.style.maxHeight = '0';
+            }
+        }
+
+        // Check if this is a first-time visitor
+        document.addEventListener('DOMContentLoaded', () => {
+            const hasCompletedWelcome = localStorage.getItem('linuxwale_welcome_completed');
+            
+            if (!hasCompletedWelcome) {
+                // First-time visitor - redirect to welcome terminal
+                window.location.href = 'welcome.html';
+            }
+        });
+    </script>
+</body>
+</html>

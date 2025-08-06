@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinuxWale Terminal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Press+Start+2P&family=VT323:wght@400&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="terminal-container" id="terminalContainer">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-title">LinuxWale Terminal</div>
+                <div class="terminal-controls">
+                    <div class="terminal-control close"></div>
+                    <div class="terminal-control minimize"></div>
+                    <div class="terminal-control maximize"></div>
+                </div>
+            </div>
+            
+            <div class="terminal-output" id="terminalOutput">
+                <div class="terminal-line">
+                    <span class="terminal-response">Welcome to LinuxWale Terminal v1.0</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-response">Initializing Linux community portal...</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-response">Connection established. Ready for commands.</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-response"></span>
+                </div>
+            </div>
+            
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">user@linuxwale:~$</span>
+                <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false">
+                <span class="cursor" id="cursor"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="terminal.js"></script>
+</body>
+</html>
