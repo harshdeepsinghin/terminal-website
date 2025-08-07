@@ -22,8 +22,8 @@
     --code-text: #f8f8f2;
     
     /* Effects */
-    --glow-green: 0 0 8px var(--accent-green);
-    --glow-green-strong: 0 0 15px var(--accent-green);
+    --glow-green: 0 0 4px var(--accent-green);
+    --glow-green-strong: 0 0 7.5px var(--accent-green);
     --border-green: 1.5px solid var(--accent-green);
 }
 
@@ -73,6 +73,22 @@ a.heading {
 }
 
 /* Navigation Bar */
+/* Navbar Logo Image Styling */
+.nav-logo-img {
+    height: 2.2rem;
+    width: 2.2rem;
+    object-fit: contain;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 8px rgba(0,255,0,0.15);
+    background: #222;
+    margin-right: 0.7rem;
+    vertical-align: middle;
+    transition: box-shadow 0.2s;
+}
+
+.nav-logo-img:hover {
+    box-shadow: 0 0 16px var(--accent-green);
+}
 .navbar {
     background-color: var(--bg-secondary);
     padding: 1rem 0;
@@ -182,6 +198,27 @@ a.heading {
     font-size: 1.8rem;
     color: var(--text-muted);
     margin-bottom: 2rem;
+}
+
+.scroll-indicator {
+    font-family: 'Fira Code', monospace;
+    font-size: 1rem;
+    color: var(--accent-green);
+    text-shadow: var(--glow-green);
+    margin-top: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
 /* Main Content Sections - Discord Style */
@@ -492,6 +529,11 @@ ul ul {
         font-size: 1.4rem;
     }
     
+    .scroll-indicator {
+        font-size: 0.9rem;
+        margin-top: 1.5rem;
+    }
+    
     .section-container {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -530,6 +572,11 @@ ul ul {
     
     .hero-subtitle {
         font-size: 1.2rem;
+    }
+    
+    .scroll-indicator {
+        font-size: 0.8rem;
+        margin-top: 1rem;
     }
     
     .nav-menu {
